@@ -1,0 +1,20 @@
+[
+  {
+    "alert_id": "ALT-1768494904.812479",
+    "timestamp": "2026-01-15T16:35:04.812496+00:00",
+    "alert_type": "response_accuracy_threshold_violation",
+    "severity": "high",
+    "metric_name": "response_accuracy",
+    "current_value": 0.8978135260572255,
+    "threshold": 0.9
+  },
+  {
+    "alert_id": "ALT-1768498655.767867",
+    "timestamp": "2026-01-15T17:37:35.767906+00:00",
+    "alert_type": "response_accuracy_threshold_violation",
+    "severity": "critical",
+    "metric_name": "response_accuracy",
+    "current_value": 0.846758094021812,
+    "threshold": 0.9
+  }
+]

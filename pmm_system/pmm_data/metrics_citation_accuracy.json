@@ -1,0 +1,26 @@
+[
+  {
+    "metric_name": "citation_accuracy",
+    "value": 0.9816656564391938,
+    "timestamp": "2026-01-15T16:35:04.810744+00:00",
+    "tags": {
+      "user_id": "test_user_1"
+    }
+  },
+  {
+    "metric_name": "citation_accuracy",
+    "value": 0.9608121088442342,
+    "timestamp": "2026-01-15T16:54:50.561157+00:00",
+    "tags": {
+      "user_id": "test_user_1"
+    }
+  },
+  {
+    "metric_name": "citation_accuracy",
+    "value": 1.0,
+    "timestamp": "2026-01-15T17:37:35.763545+00:00",
+    "tags": {
+      "user_id": "string"
+    }
+  }
+]
