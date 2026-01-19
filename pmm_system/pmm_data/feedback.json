@@ -1,0 +1,22 @@
+[
+  {
+    "feedback_id": "FB-1768494905.318131",
+    "interaction_id": "test_int_001",
+    "timestamp": "2026-01-15T16:35:05.318160+00:00",
+    "rating": 4,
+    "sentiment": "positive",
+    "categories": [
+      "high_satisfaction"
+    ]
+  },
+  {
+    "feedback_id": "FB-1768496091.07026",
+    "interaction_id": "test_int_001",
+    "timestamp": "2026-01-15T16:54:51.070291+00:00",
+    "rating": 4,
+    "sentiment": "positive",
+    "categories": [
+      "high_satisfaction"
+    ]
+  }
+]

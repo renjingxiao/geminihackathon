@@ -1,0 +1,29 @@
+[
+  {
+    "interaction_id": "test_int_1768494904",
+    "timestamp": "2026-01-15T16:35:04.810744+00:00",
+    "user_id": "test_user_1",
+    "prompt": "What is machine learning?",
+    "response": "Machine learning is a subset of artificial intelligence...",
+    "response_time": 0.523,
+    "model_version": "test-model-1.0"
+  },
+  {
+    "interaction_id": "test_int_1768496090",
+    "timestamp": "2026-01-15T16:54:50.561157+00:00",
+    "user_id": "test_user_1",
+    "prompt": "What is machine learning?",
+    "response": "Machine learning is a subset of artificial intelligence...",
+    "response_time": 0.523,
+    "model_version": "test-model-1.0"
+  },
+  {
+    "interaction_id": "string",
+    "timestamp": "2026-01-15T17:37:35.763545+00:00",
+    "user_id": "string",
+    "prompt": "string",
+    "response": "string",
+    "response_time": 0.0,
+    "model_version": "default"
+  }
+]

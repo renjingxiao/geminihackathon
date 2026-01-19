@@ -1,0 +1,26 @@
+[
+  {
+    "metric_name": "hallucination_rate",
+    "value": 0.04676142583706038,
+    "timestamp": "2026-01-15T16:35:04.810744+00:00",
+    "tags": {
+      "user_id": "test_user_1"
+    }
+  },
+  {
+    "metric_name": "hallucination_rate",
+    "value": 0.08294753373650743,
+    "timestamp": "2026-01-15T16:54:50.561157+00:00",
+    "tags": {
+      "user_id": "test_user_1"
+    }
+  },
+  {
+    "metric_name": "hallucination_rate",
+    "value": 0.08156437887749686,
+    "timestamp": "2026-01-15T17:37:35.763545+00:00",
+    "tags": {
+      "user_id": "string"
+    }
+  }
+]
