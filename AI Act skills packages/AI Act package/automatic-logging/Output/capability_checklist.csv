@@ -1,0 +1,7 @@
+Requirement,Description,Status (Compliant/Not Compliant),Implementation Details
+Automatic Recording Capability,System technically capable of automatically recording of events (logs).,Compliant,ComplianceLogger class with @log_interaction decorator auto-captures all AI interactions.
+Traceability of Functioning,Ensuring a level of traceability appropriate to the intended purpose.,Compliant,SHA-256 hashing of inputs/outputs with unique UUIDs for each log entry.
+Continuous Recording Lifecycle,Recording of events over the lifetime of the system.,Compliant,Persistent CSV storage with Excel consolidation for long-term retention.
+Risk Identification Capability,Ability to identify situations resulting in Article 79(1) risks.,Compliant,AI Watchdog monitors latency (>5s) and DOS attacks (>10 calls/sec) in real-time.
+Substantial Modification Detection,Ability to identify situations presenting substantial modifications.,Compliant,System version tracking in every log entry enables modification detection.
+Post-Market Monitoring Facilitation,Facilitating monitoring of operations (Art 26(5)) and post-market (Art 72).,Compliant,AI Auditor generates compliance reports using Gemini LLM for pattern analysis.

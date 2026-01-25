@@ -1,0 +1,5 @@
+Requirement (Annex III 1(a)),Log Field Name,Data Format,Retention Period (>6 Months)
+Period of Use (Start/End),,DateTime,6 Months
+Reference Database Checked,,String/ID,6 Months
+Input Data (Match Result),,Binary/Hash,6 Months
+Person Involved (Identification),,UserID/Name,6 Months
