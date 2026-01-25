@@ -1,0 +1,6 @@
+Requirement (Annex III 1(a)),Log Field Name,Data Format,Retention Period (>6 Months)
+Period of Use (Start/End),"timestamp_start, timestamp_end",DateTime (ISO 8601),6 Months
+Reference Database Checked,system_version,String/ID,6 Months
+Input Data (Match Result),input_hash,SHA-256 Hash (64 chars),6 Months
+Output Data Reference,output_hash,SHA-256 Hash (64 chars),6 Months
+Person Involved (Identification),log_id,UUID v4,6 Months

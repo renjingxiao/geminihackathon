@@ -1,0 +1,17 @@
+Log ID,Timestamp,Event Type (Risk/Incident/Modification),Risk Category (Art 79),Description of Event,Automated Alert Generated?,Action Taken
+1ea5b9da-90e9-4c39-ad26-e5c7eea5f4bf,2026-01-25 16:37:55.408210,Risk,Test Category,Test risk description,Yes,Test action
+acf3d8af-91cb-4d32-a18a-0f810ecb6720,2026-01-25 16:37:55.408738,Risk,Cybersecurity / Denial of Service,High frequency detected: 10 calls in 1.0s,Yes,Automated alert generated
+569beb0f-a5b6-4469-b982-1ff26e3d1838,2026-01-25 16:37:55.409742,Risk,Performance degradation / Availability Risk,High latency detected: 6.00s (threshold: 5.0s),Yes,Automated alert generated
+168c7d70-ca90-48a1-8bc3-71aa483315d1,2026-01-25 16:37:55.411822,Test,Test,Test consolidation,Yes,None
+62fe70b7-3f03-4542-81d6-a21839457e0a,2026-01-25 16:41:41.102657,Risk,Test Category,Test risk description,Yes,Test action
+cade1c57-e0ec-4911-8721-58e9b6299b7d,2026-01-25 16:41:41.103663,Risk,Cybersecurity / Denial of Service,High frequency detected: 10 calls in 1.0s,Yes,Automated alert generated
+04b7b0d2-13ea-4b0e-b823-0b089901441e,2026-01-25 16:41:41.104169,Risk,Performance degradation / Availability Risk,High latency detected: 6.00s (threshold: 5.0s),Yes,Automated alert generated
+af9125f8-a861-49d2-842c-5709f7a1dcff,2026-01-25 16:41:41.105262,Test,Test,Test consolidation,Yes,None
+1089140b-1e41-414a-9bcb-4c1bc606fa8f,2026-01-25 16:48:23.209738,Risk,Performance degradation / Availability Risk,High latency detected: 6.2s,Yes,Logged for review
+50ddbe1f-6a06-42ae-96c3-c55af7df08fd,2026-01-25 16:48:23.209738,Incident,Cybersecurity / Denial of Service,10+ requests in 1 second,Yes,Rate limiting applied
+b9cfaeca-5f8b-402d-b3ad-2332b7fcfee5,2026-01-25 16:48:23.209738,Modification,System Update,Model updated from v1.0 to v1.1,Yes,Version tracked
+607684cc-794e-4a02-ac22-3d3b07f38fdf,2026-01-25 16:48:23.209738,Risk,Data Quality,Input validation failed for 3 records,Yes,Records flagged
+404a981d-2ebd-4f24-8107-db2f1f988183,2026-01-25 16:55:24.839353,Risk,Performance degradation / Availability Risk,High latency detected: 6.2s,Yes,Logged for review
+279ffbd2-708d-4dc1-904d-f1f1c7e27457,2026-01-25 16:55:24.839353,Incident,Cybersecurity / Denial of Service,10+ requests in 1 second,Yes,Rate limiting applied
+df87823a-edf1-4923-8289-dff9882bdcd4,2026-01-25 16:55:24.839353,Modification,System Update,Model updated from v1.0 to v1.1,Yes,Version tracked
+a8b910fa-d787-4757-a791-8375572e26be,2026-01-25 16:55:24.840065,Risk,Data Quality,Input validation failed for 3 records,Yes,Records flagged

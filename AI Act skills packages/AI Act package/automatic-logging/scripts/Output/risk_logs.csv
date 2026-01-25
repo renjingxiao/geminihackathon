@@ -1,0 +1,5 @@
+Log ID,Timestamp,Event Type (Risk/Incident/Modification),Risk Category (Art 79),Description of Event,Automated Alert Generated?,Action Taken
+1ea5b9da-90e9-4c39-ad26-e5c7eea5f4bf,2026-01-25 16:37:55.408210,Risk,Test Category,Test risk description,Yes,Test action
+acf3d8af-91cb-4d32-a18a-0f810ecb6720,2026-01-25 16:37:55.408738,Risk,Cybersecurity / Denial of Service,High frequency detected: 10 calls in 1.0s,Yes,Automated alert generated
+569beb0f-a5b6-4469-b982-1ff26e3d1838,2026-01-25 16:37:55.409742,Risk,Performance degradation / Availability Risk,High latency detected: 6.00s (threshold: 5.0s),Yes,Automated alert generated
+168c7d70-ca90-48a1-8bc3-71aa483315d1,2026-01-25 16:37:55.411822,Test,Test,Test consolidation,Yes,None
