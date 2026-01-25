@@ -5,11 +5,10 @@ import google.generativeai as genai
 from deepeval import evaluate
 from deepeval.test_case import LLMTestCase
 from deepeval.models import DeepEvalBaseLLM
+from deepeval.metrics import AnswerRelevancyMetric
 
-# Add the parent directory ('ai-testing') to the Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# Fix the import path for the custom metric
 from script.adversarial_metric import AdversarialRobustnessMetric
 
 
@@ -25,6 +24,8 @@ class CustomGeminiModel(DeepEvalBaseLLM):
         return self._model
 
     def generate(self, prompt: str) -> str:
+        if not prompt:
+            return "This is an empty query."
         response = self._model.generate_content(
             prompt,
             generation_config=genai.types.GenerationConfig(
@@ -67,21 +68,57 @@ async def main():
     )
 
     # Instantiate the custom metric
-    metric = AdversarialRobustnessMetric(
+    relevancy_metric = AnswerRelevancyMetric(
+        threshold=0.6,
+        model=simulator_model,
+    )
+
+    robustness_metric = AdversarialRobustnessMetric(
         threshold=0.6,
         model=test_model,
         simulator_model=simulator_model,
         enable_format_perturbation=True
     )
 
-    # Create a test case
-    test_case = LLMTestCase(
-        input="What is the capital of France?",
-        actual_output="Paris"
-    )
+    # Define test case inputs
+    edge_case_inputs = [
+        "a",  # Very short query
+        "", # Empty query
+        "What happens if I ask a question that is extremely long and convoluted, with many sub-clauses and technical terms, exceeding typical input lengths, and perhaps containing some contradictory information or ambiguous phrasing that could lead to multiple interpretations, thereby testing the model\'s ability to handle complex and potentially confusing inputs, and its robustness against various forms of input perturbation, including but not limited to character-level changes, word-level changes, sentence-level changes, and semantic-level changes, all while maintaining a coherent and relevant response that aligns with the user\'s intent, even if the intent is hard to discern from the excessively verbose input?",  # Very long query
+        "Tell me about the history of the square circle.", # Failure mode (nonsensical query)
+    ]
 
-    # Run the evaluation
-    evaluate([test_case], [metric])
+    # Generate actual_output for edge cases
+    edge_case_1_actual_output = await test_model.a_generate(prompt=edge_case_inputs[0])
+    edge_case_2_actual_output = await test_model.a_generate(prompt=edge_case_inputs[1])
+    edge_case_3_actual_output = await test_model.a_generate(prompt=edge_case_inputs[2])
+    edge_case_4_actual_output = await test_model.a_generate(prompt=edge_case_inputs[3])
+
+    # Create test cases for edge cases
+    edge_case_1 = LLMTestCase(input=edge_case_inputs[0], actual_output=edge_case_1_actual_output)
+    edge_case_2 = LLMTestCase(input=edge_case_inputs[1], actual_output=edge_case_2_actual_output)
+    edge_case_3 = LLMTestCase(input=edge_case_inputs[2], actual_output=edge_case_3_actual_output)
+    edge_case_4 = LLMTestCase(input=edge_case_inputs[3], actual_output=edge_case_4_actual_output)
+
+    # Define a regular test case input
+    regular_test_case_input = "What is the capital of France?"
+    
+    # Generate actual_output for the regular test case
+    regular_test_case_actual_output = await test_model.a_generate(prompt=regular_test_case_input)
+
+    # Create a regular test case
+    test_case = LLMTestCase(input=regular_test_case_input, actual_output=regular_test_case_actual_output)
+
+    # Run the evaluation for relevancy metric
+    evaluate(
+        test_cases=[edge_case_1, edge_case_2, edge_case_3, edge_case_4], 
+        metrics=[relevancy_metric]
+    )
+    # Run the evaluation for robustness metric
+    evaluate(
+        test_cases=[test_case], 
+        metrics=[robustness_metric]
+    )
 
 if __name__ == "__main__":
     asyncio.run(main())
