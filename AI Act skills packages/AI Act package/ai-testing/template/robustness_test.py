@@ -70,7 +70,7 @@ async def main():
     # Instantiate the custom metric
     relevancy_metric = AnswerRelevancyMetric(
         threshold=0.6,
-        model=test_model,
+        model=simulator_model,
     )
 
     robustness_metric = AdversarialRobustnessMetric(
