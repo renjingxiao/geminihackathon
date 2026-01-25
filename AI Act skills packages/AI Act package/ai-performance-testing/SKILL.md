@@ -11,6 +11,10 @@ This skill provides a structured workflow for performance testing of AI systems,
 
 Follow these steps to conduct comprehensive AI performance testing:
 
+Remind: you should create new files instead of modify template
+Remind: you should use local existing venv instead of directly create one
+Remind: you should only modify the tested model, do not change any config for the testing process/models
+
 1.  **Generate Test Data:**
     *   **Objective:** Create a dataset for testing the AI system.
     *   **Action:** Use the `template/data_generator.py` script to generate test data. You may need to ask the user for a data source to integrate. The output data file should be appropriately named for the test run.
