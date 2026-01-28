@@ -1,0 +1,13 @@
+{
+  "test_id": "TEST-CHG-20260128152807-7741bd-audit-20260128152814",
+  "test_name": "Unit Test Suite",
+  "test_type": "audit",
+  "status": "failed",
+  "passed": false,
+  "duration_seconds": 6.3443748305187455,
+  "details": "Executed Unit Test Suite for change CHG-20260128152807-7741bd. Some checks failed - review required.",
+  "timestamp": "2026-01-28T15:28:14.999033",
+  "artifacts": [
+    "change_management/test_results/TEST-CHG-20260128152807-7741bd-audit-20260128152814_report.json"
+  ]
+}

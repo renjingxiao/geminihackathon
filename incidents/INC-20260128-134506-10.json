@@ -1,0 +1,42 @@
+{
+  "id": "INC-20260128-134506-10",
+  "title": "Security threat detected: Sql Injection",
+  "description": "Potential sql injection detected: pattern '' OR '\n\nThreat Level: critical\nConfidence: 100.00%\nIndicators: {\n  \"malicious_pattern\": \"' OR \"\n}\nRecommended Actions:\n- Block request immediately\n- Audit recent requests from this source\n- Review and strengthen input validation",
+  "detected_at": "2026-01-28T13:45:06.011796",
+  "detected_by": "automated_security_monitor",
+  "ai_system_id": "SECURITY-MONITOR-001",
+  "ai_system_name": "Security Monitoring System",
+  "member_state": "EU",
+  "severity": null,
+  "incident_type": null,
+  "is_serious": false,
+  "causal_link_established": false,
+  "causal_link_established_at": null,
+  "reporting_deadline": null,
+  "reporting_timeline_days": null,
+  "initial_report_submitted": false,
+  "initial_report_submitted_at": null,
+  "complete_report_submitted": false,
+  "complete_report_submitted_at": null,
+  "status": "detected",
+  "remediation_actions": [],
+  "remediation_status": "pending",
+  "corrective_actions": [],
+  "authority_notified": false,
+  "authority_notified_at": null,
+  "authority_contact": null,
+  "investigation_notes": [],
+  "risk_assessment": null,
+  "created_at": "2026-01-28T13:45:06.011813",
+  "updated_at": "2026-01-28T13:45:06.011816",
+  "metadata": {
+    "threat_detection_id": "THR-20260128-134506-0",
+    "threat_level": "critical",
+    "category": "sql_injection",
+    "confidence_score": 1.0,
+    "eu_ai_act_article": "Article 15(4) - Resilience against attacks",
+    "affected_events": [
+      "EVT-000020"
+    ]
+  }
+}

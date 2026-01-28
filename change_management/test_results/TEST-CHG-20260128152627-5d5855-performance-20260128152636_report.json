@@ -1,0 +1,13 @@
+{
+  "test_id": "TEST-CHG-20260128152627-5d5855-performance-20260128152636",
+  "test_name": "Performance Test Suite",
+  "test_type": "performance",
+  "status": "passed",
+  "passed": true,
+  "duration_seconds": 73.60059455405977,
+  "details": "Executed Performance Test Suite for change CHG-20260128152627-5d5855. All checks passed.",
+  "timestamp": "2026-01-28T15:26:36.113940",
+  "artifacts": [
+    "change_management/test_results/TEST-CHG-20260128152627-5d5855-performance-20260128152636_report.json"
+  ]
+}

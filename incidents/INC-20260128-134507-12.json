@@ -1,0 +1,42 @@
+{
+  "id": "INC-20260128-134507-12",
+  "title": "Security threat detected: Error Spike",
+  "description": "6 server errors in last 20 requests\n\nThreat Level: high\nConfidence: 80.00%\nIndicators: {\n  \"error_rate\": 0.3\n}\nRecommended Actions:\n- Investigate backend service health\n- Check for potential DoS attack",
+  "detected_at": "2026-01-28T13:45:07.531864",
+  "detected_by": "automated_security_monitor",
+  "ai_system_id": "SECURITY-MONITOR-001",
+  "ai_system_name": "Security Monitoring System",
+  "member_state": "EU",
+  "severity": null,
+  "incident_type": null,
+  "is_serious": false,
+  "causal_link_established": false,
+  "causal_link_established_at": null,
+  "reporting_deadline": null,
+  "reporting_timeline_days": null,
+  "initial_report_submitted": false,
+  "initial_report_submitted_at": null,
+  "complete_report_submitted": false,
+  "complete_report_submitted_at": null,
+  "status": "detected",
+  "remediation_actions": [],
+  "remediation_status": "pending",
+  "corrective_actions": [],
+  "authority_notified": false,
+  "authority_notified_at": null,
+  "authority_contact": null,
+  "investigation_notes": [],
+  "risk_assessment": null,
+  "created_at": "2026-01-28T13:45:07.531881",
+  "updated_at": "2026-01-28T13:45:07.531883",
+  "metadata": {
+    "threat_detection_id": "THR-20260128-134507-2",
+    "threat_level": "high",
+    "category": "error_spike",
+    "confidence_score": 0.8,
+    "eu_ai_act_article": "Article 73 - Serious incident reporting",
+    "affected_events": [
+      "EVT-000177"
+    ]
+  }
+}

@@ -1,0 +1,573 @@
+{
+  "generated_at": "2026-01-28T12:43:07.122453",
+  "sources": {
+    "cybersecurity_assessment_json": "/Users/jiangyuqing/geminihackathon/Output/CYBERSECURITY_ASSESSMENT.json",
+    "security_events_log": "/Users/jiangyuqing/geminihackathon/security_events/events.jsonl",
+    "incidents_dir": "/Users/jiangyuqing/geminihackathon/incidents"
+  },
+  "cybersecurity_assessment": {
+    "generated_at": "2026-01-28T10:08:36.698080",
+    "scope_root": "/Users/jiangyuqing/geminihackathon",
+    "eu_ai_act_alignment": {
+      "article_15_1": {
+        "keywords": [
+          "system security",
+          "data protection",
+          "attack prevention"
+        ],
+        "controls_covered": [
+          "threat_modeling",
+          "security_code_review",
+          "vulnerability_assessment",
+          "secrets_management"
+        ]
+      },
+      "article_15_4": {
+        "keywords": [
+          "system integrity",
+          "injection attack prevention",
+          "attack prevention"
+        ],
+        "controls_covered": [
+          "input_validation",
+          "rate_limiting",
+          "sanitization"
+        ]
+      }
+    },
+    "tool_results": [
+      {
+        "name": "Bandit (Python SAST)",
+        "status": "skipped",
+        "details": "'bandit' not found in PATH",
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "name": "pip-audit (deps)",
+        "status": "skipped",
+        "details": "'pip-audit' not found in PATH",
+        "stdout": "",
+        "stderr": ""
+      },
+      {
+        "name": "gitleaks (secrets)",
+        "status": "skipped",
+        "details": "'gitleaks' not found in PATH",
+        "stdout": "",
+        "stderr": ""
+      }
+    ],
+    "findings": [
+      {
+        "category": "secrets_management",
+        "severity": "high",
+        "title": "Potential secret detected: Generic API key",
+        "evidence": "batch_fact_checker.py",
+        "recommendation": "Rotate impacted credentials, remove secrets from repo history, and enforce secret scanning in CI."
+      },
+      {
+        "category": "secrets_management",
+        "severity": "high",
+        "title": "Potential secret detected: Generic API key",
+        "evidence": "check_key.py",
+        "recommendation": "Rotate impacted credentials, remove secrets from repo history, and enforce secret scanning in CI."
+      },
+      {
+        "category": "secrets_management",
+        "severity": "high",
+        "title": "Potential secret detected: Generic API key",
+        "evidence": "risk_analysis_accessibility/analyser.py",
+        "recommendation": "Rotate impacted credentials, remove secrets from repo history, and enforce secret scanning in CI."
+      },
+      {
+        "category": "security_code_review",
+        "severity": "low",
+        "title": "Potential insecure YAML load",
+        "evidence": "skills/explaining-code/google-ecosystem/skills/gemini-cli-docs/scripts/management/index_manager.py",
+        "recommendation": "Use yaml.safe_load for untrusted YAML."
+      },
+      {
+        "category": "threat_modeling",
+        "severity": "low",
+        "title": "Threat modeling not generated (missing GEMINI_API_KEY or google-genai)",
+        "evidence": "N/A",
+        "recommendation": "Provide GEMINI_API_KEY and ensure google-genai is installed to generate a draft threat model, then validate with experts."
+      }
+    ],
+    "summary": {
+      "finding_counts": {
+        "critical": 0,
+        "high": 3,
+        "medium": 0,
+        "low": 2
+      },
+      "top_findings": [
+        {
+          "category": "secrets_management",
+          "severity": "high",
+          "title": "Potential secret detected: Generic API key",
+          "evidence": "batch_fact_checker.py",
+          "recommendation": "Rotate impacted credentials, remove secrets from repo history, and enforce secret scanning in CI."
+        },
+        {
+          "category": "secrets_management",
+          "severity": "high",
+          "title": "Potential secret detected: Generic API key",
+          "evidence": "check_key.py",
+          "recommendation": "Rotate impacted credentials, remove secrets from repo history, and enforce secret scanning in CI."
+        },
+        {
+          "category": "secrets_management",
+          "severity": "high",
+          "title": "Potential secret detected: Generic API key",
+          "evidence": "risk_analysis_accessibility/analyser.py",
+          "recommendation": "Rotate impacted credentials, remove secrets from repo history, and enforce secret scanning in CI."
+        },
+        {
+          "category": "security_code_review",
+          "severity": "low",
+          "title": "Potential insecure YAML load",
+          "evidence": "skills/explaining-code/google-ecosystem/skills/gemini-cli-docs/scripts/management/index_manager.py",
+          "recommendation": "Use yaml.safe_load for untrusted YAML."
+        },
+        {
+          "category": "threat_modeling",
+          "severity": "low",
+          "title": "Threat modeling not generated (missing GEMINI_API_KEY or google-genai)",
+          "evidence": "N/A",
+          "recommendation": "Provide GEMINI_API_KEY and ensure google-genai is installed to generate a draft threat model, then validate with experts."
+        }
+      ],
+      "tools_failed": []
+    }
+  },
+  "security_events": {
+    "recent": [],
+    "counts_by_severity": {},
+    "total": 0
+  },
+  "incidents": {
+    "recent": [
+      {
+        "id": "INC-20260118-002706-9",
+        "title": "AI System Produced Harmful Medical Advice",
+        "description": "The AI system provided incorrect dosage recommendations that could lead to patient harm. The system suggested 10x the recommended dose for a pediatric medication. This was detected through automated monitoring of prescription patterns.",
+        "detected_at": "2026-01-18T00:27:06.182079",
+        "detected_by": "automated",
+        "ai_system_id": "MED-AI-001",
+        "ai_system_name": "Medical Diagnosis Assistant v2.0",
+        "member_state": "Germany",
+        "severity": "medium",
+        "incident_type": null,
+        "is_serious": false,
+        "causal_link_established": true,
+        "causal_link_established_at": "2026-01-18T00:27:08.623511",
+        "reporting_deadline": "2026-01-18T00:27:06.182079",
+        "reporting_timeline_days": 0,
+        "initial_report_submitted": false,
+        "initial_report_submitted_at": null,
+        "complete_report_submitted": false,
+        "complete_report_submitted_at": null,
+        "status": "remediating",
+        "remediation_actions": [
+          "[AI Suggested] Conduct root cause analysis",
+          "[AI Suggested] Implement immediate containment measures",
+          "[AI Suggested] Review and update risk management system (Article 9)",
+          "[AI Suggested] Update technical documentation",
+          "[AI Suggested] Notify affected users if required"
+        ],
+        "remediation_status": "pending",
+        "corrective_actions": [],
+        "authority_notified": false,
+        "authority_notified_at": null,
+        "authority_contact": null,
+        "investigation_notes": [
+          "Causal link established: Root cause analysis confirms AI model error in dosage calculation algorithm. The model incorrectly interpreted pediatric weight-based dosing guidelines."
+        ],
+        "risk_assessment": null,
+        "created_at": "2026-01-18T00:27:06.182097",
+        "updated_at": "2026-01-18T00:27:10.813926",
+        "metadata": {
+          "test": true,
+          "demo": true
+        }
+      },
+      {
+        "id": "INC-20260118-002610-8",
+        "title": "AI System Produced Harmful Medical Advice",
+        "description": "The AI system provided incorrect dosage recommendations that could lead to patient harm. The system suggested 10x the recommended dose for a pediatric medication. This was detected through automated monitoring of prescription patterns.",
+        "detected_at": "2026-01-18T00:26:10.259910",
+        "detected_by": "automated",
+        "ai_system_id": "MED-AI-001",
+        "ai_system_name": "Medical Diagnosis Assistant v2.0",
+        "member_state": "Germany",
+        "severity": null,
+        "incident_type": null,
+        "is_serious": false,
+        "causal_link_established": true,
+        "causal_link_established_at": "2026-01-18T00:26:12.278692",
+        "reporting_deadline": null,
+        "reporting_timeline_days": null,
+        "initial_report_submitted": false,
+        "initial_report_submitted_at": null,
+        "complete_report_submitted": false,
+        "complete_report_submitted_at": null,
+        "status": "remediating",
+        "remediation_actions": [
+          "[AI Suggested] Manual remediation review required"
+        ],
+        "remediation_status": "pending",
+        "corrective_actions": [],
+        "authority_notified": false,
+        "authority_notified_at": null,
+        "authority_contact": null,
+        "investigation_notes": [
+          "Causal link established: Root cause analysis confirms AI model error in dosage calculation algorithm. The model incorrectly interpreted pediatric weight-based dosing guidelines."
+        ],
+        "risk_assessment": null,
+        "created_at": "2026-01-18T00:26:10.259931",
+        "updated_at": "2026-01-18T00:26:14.288368",
+        "metadata": {
+          "test": true,
+          "demo": true
+        }
+      },
+      {
+        "id": "INC-20260118-002049-7",
+        "title": "AI System Produced Harmful Medical Advice",
+        "description": "The AI system provided incorrect dosage recommendations that could lead to patient harm. The system suggested 10x the recommended dose for a pediatric medication. This was detected through automated monitoring of prescription patterns.",
+        "detected_at": "2026-01-18T00:20:49.737831",
+        "detected_by": "automated",
+        "ai_system_id": "MED-AI-001",
+        "ai_system_name": "Medical Diagnosis Assistant v2.0",
+        "member_state": "Germany",
+        "severity": "medium",
+        "incident_type": null,
+        "is_serious": false,
+        "causal_link_established": true,
+        "causal_link_established_at": "2026-01-18T00:20:52.180640",
+        "reporting_deadline": "2026-01-18T00:20:49.737831",
+        "reporting_timeline_days": 0,
+        "initial_report_submitted": false,
+        "initial_report_submitted_at": null,
+        "complete_report_submitted": false,
+        "complete_report_submitted_at": null,
+        "status": "remediating",
+        "remediation_actions": [
+          "[AI Suggested] Conduct root cause analysis",
+          "[AI Suggested] Implement immediate containment measures",
+          "[AI Suggested] Review and update risk management system (Article 9)",
+          "[AI Suggested] Update technical documentation",
+          "[AI Suggested] Notify affected users if required"
+        ],
+        "remediation_status": "pending",
+        "corrective_actions": [],
+        "authority_notified": false,
+        "authority_notified_at": null,
+        "authority_contact": null,
+        "investigation_notes": [
+          "Causal link established: Root cause analysis confirms AI model error in dosage calculation algorithm. The model incorrectly interpreted pediatric weight-based dosing guidelines."
+        ],
+        "risk_assessment": null,
+        "created_at": "2026-01-18T00:20:49.737857",
+        "updated_at": "2026-01-18T00:20:54.290515",
+        "metadata": {
+          "test": true,
+          "demo": true
+        }
+      },
+      {
+        "id": "INC-20260117-200642-6",
+        "title": "AI System Produced Harmful Medical Advice",
+        "description": "The AI system provided incorrect dosage recommendations that could lead to patient harm. The system suggested 10x the recommended dose for a pediatric medication. This was detected through automated monitoring of prescription patterns.",
+        "detected_at": "2026-01-17T20:06:42.690809",
+        "detected_by": "automated",
+        "ai_system_id": "MED-AI-001",
+        "ai_system_name": "Medical Diagnosis Assistant v2.0",
+        "member_state": "Germany",
+        "severity": "medium",
+        "incident_type": null,
+        "is_serious": false,
+        "causal_link_established": true,
+        "causal_link_established_at": "2026-01-17T20:06:45.112856",
+        "reporting_deadline": "2026-01-17T20:06:42.690809",
+        "reporting_timeline_days": 0,
+        "initial_report_submitted": false,
+        "initial_report_submitted_at": null,
+        "complete_report_submitted": false,
+        "complete_report_submitted_at": null,
+        "status": "remediating",
+        "remediation_actions": [
+          "[AI Suggested] Conduct root cause analysis",
+          "[AI Suggested] Implement immediate containment measures",
+          "[AI Suggested] Review and update risk management system (Article 9)",
+          "[AI Suggested] Update technical documentation",
+          "[AI Suggested] Notify affected users if required"
+        ],
+        "remediation_status": "pending",
+        "corrective_actions": [],
+        "authority_notified": false,
+        "authority_notified_at": null,
+        "authority_contact": null,
+        "investigation_notes": [
+          "Causal link established: Root cause analysis confirms AI model error in dosage calculation algorithm. The model incorrectly interpreted pediatric weight-based dosing guidelines."
+        ],
+        "risk_assessment": null,
+        "created_at": "2026-01-17T20:06:42.690824",
+        "updated_at": "2026-01-17T20:06:47.294734",
+        "metadata": {
+          "test": true,
+          "demo": true
+        }
+      },
+      {
+        "id": "INC-20260117-120129-1",
+        "title": "AI System Produced Harmful Medical Advice",
+        "description": "The AI system provided incorrect dosage recommendations that could lead to patient harm. The system suggested 10x the recommended dose for a pediatric medication. This was detected through automated monitoring of prescription patterns.",
+        "detected_at": "2026-01-17T12:01:29.160218",
+        "detected_by": "automated",
+        "ai_system_id": "MED-AI-001",
+        "ai_system_name": "Medical Diagnosis Assistant v2.0",
+        "member_state": "Germany",
+        "severity": "medium",
+        "incident_type": null,
+        "is_serious": false,
+        "serious_incident_type": "not_serious",
+        "causal_link_established": false,
+        "causal_link_established_at": null,
+        "causal_link_evidence": null,
+        "reporting_deadline": null,
+        "reporting_timeline_days": null,
+        "initial_report_submitted": false,
+        "initial_report_submitted_at": null,
+        "complete_report_submitted": false,
+        "complete_report_submitted_at": null,
+        "status": "remediating",
+        "remediation_actions": [],
+        "remediation_status": "pending",
+        "corrective_actions": [],
+        "authority_notified": false,
+        "authority_notified_at": null,
+        "authority_contact": null,
+        "investigation_notes": [],
+        "risk_assessment": null,
+        "created_at": "2026-01-17T12:01:29.160271",
+        "updated_at": "2026-01-17T12:01:30.506461",
+        "metadata": {
+          "test": true,
+          "demo": true
+        }
+      },
+      {
+        "id": "INC-20260117-115147-9",
+        "title": "AI System Produced Harmful Medical Advice",
+        "description": "The AI system provided incorrect dosage recommendations that could lead to patient harm. The system suggested 10x the recommended dose for a pediatric medication. This was detected through automated monitoring of prescription patterns.",
+        "detected_at": "2026-01-17T11:51:47.677523",
+        "detected_by": "automated",
+        "ai_system_id": "MED-AI-001",
+        "ai_system_name": "Medical Diagnosis Assistant v2.0",
+        "member_state": "Germany",
+        "severity": null,
+        "incident_type": null,
+        "is_serious": false,
+        "serious_incident_type": null,
+        "causal_link_established": false,
+        "causal_link_established_at": null,
+        "causal_link_evidence": null,
+        "reporting_deadline": null,
+        "reporting_timeline_days": null,
+        "initial_report_submitted": false,
+        "initial_report_submitted_at": null,
+        "complete_report_submitted": false,
+        "complete_report_submitted_at": null,
+        "status": "detected",
+        "remediation_actions": [],
+        "remediation_status": "pending",
+        "corrective_actions": [],
+        "authority_notified": false,
+        "authority_notified_at": null,
+        "authority_contact": null,
+        "investigation_notes": [],
+        "risk_assessment": null,
+        "created_at": "2026-01-17T11:51:47.677586",
+        "updated_at": "2026-01-17T11:51:47.677604",
+        "metadata": {
+          "test": true,
+          "demo": true
+        }
+      },
+      {
+        "id": "INC-20260117-104851-3",
+        "title": "AI System Produced Harmful Medical Advice",
+        "description": "The AI system provided incorrect dosage recommendations that could lead to patient harm. The system suggested 10x the recommended dose for a pediatric medication. This was detected through automated monitoring of prescription patterns.",
+        "detected_at": "2026-01-17T10:48:51.754060",
+        "detected_by": "automated",
+        "ai_system_id": "MED-AI-001",
+        "ai_system_name": "Medical Diagnosis Assistant v2.0",
+        "member_state": "Germany",
+        "severity": null,
+        "incident_type": null,
+        "is_serious": false,
+        "causal_link_established": true,
+        "causal_link_established_at": "2026-01-17T10:48:53.772967",
+        "reporting_deadline": null,
+        "reporting_timeline_days": null,
+        "initial_report_submitted": false,
+        "initial_report_submitted_at": null,
+        "complete_report_submitted": false,
+        "complete_report_submitted_at": null,
+        "status": "remediating",
+        "remediation_actions": [
+          "[AI Suggested] Manual remediation review required"
+        ],
+        "remediation_status": "pending",
+        "corrective_actions": [],
+        "authority_notified": false,
+        "authority_notified_at": null,
+        "authority_contact": null,
+        "investigation_notes": [
+          "Causal link established: Root cause analysis confirms AI model error in dosage calculation algorithm. The model incorrectly interpreted pediatric weight-based dosing guidelines."
+        ],
+        "risk_assessment": null,
+        "created_at": "2026-01-17T10:48:51.754079",
+        "updated_at": "2026-01-17T10:48:55.790306",
+        "metadata": {
+          "test": true,
+          "demo": true
+        }
+      },
+      {
+        "id": "INC-20260117-104416-2",
+        "title": "AI System Produced Harmful Medical Advice",
+        "description": "The AI system provided incorrect dosage recommendations that could lead to patient harm. The system suggested 10x the recommended dose for a pediatric medication. This was detected through automated monitoring of prescription patterns.",
+        "detected_at": "2026-01-17T10:44:16.813287",
+        "detected_by": "automated",
+        "ai_system_id": "MED-AI-001",
+        "ai_system_name": "Medical Diagnosis Assistant v2.0",
+        "member_state": "Germany",
+        "severity": null,
+        "incident_type": null,
+        "is_serious": false,
+        "causal_link_established": true,
+        "causal_link_established_at": "2026-01-17T10:44:18.830142",
+        "reporting_deadline": null,
+        "reporting_timeline_days": null,
+        "initial_report_submitted": false,
+        "initial_report_submitted_at": null,
+        "complete_report_submitted": false,
+        "complete_report_submitted_at": null,
+        "status": "remediating",
+        "remediation_actions": [
+          "[AI Suggested] Manual remediation review required"
+        ],
+        "remediation_status": "pending",
+        "corrective_actions": [],
+        "authority_notified": false,
+        "authority_notified_at": null,
+        "authority_contact": null,
+        "investigation_notes": [
+          "Causal link established: Root cause analysis confirms AI model error in dosage calculation algorithm. The model incorrectly interpreted pediatric weight-based dosing guidelines."
+        ],
+        "risk_assessment": null,
+        "created_at": "2026-01-17T10:44:16.813310",
+        "updated_at": "2026-01-17T10:44:20.847984",
+        "metadata": {
+          "test": true,
+          "demo": true
+        }
+      },
+      {
+        "id": "INC-20260117-103147-1",
+        "title": "AI System Produced Harmful Medical Advice",
+        "description": "The AI system provided incorrect dosage recommendations that could lead to patient harm. The system suggested 10x the recommended dose for a pediatric medication. This was detected through automated monitoring of prescription patterns.",
+        "detected_at": "2026-01-17T10:31:47.052999",
+        "detected_by": "automated",
+        "ai_system_id": "MED-AI-001",
+        "ai_system_name": "Medical Diagnosis Assistant v2.0",
+        "member_state": "Germany",
+        "severity": "medium",
+        "incident_type": null,
+        "is_serious": false,
+        "causal_link_established": true,
+        "causal_link_established_at": "2026-01-17T10:31:49.459365",
+        "reporting_deadline": "2026-01-17T10:31:47.052999",
+        "reporting_timeline_days": 0,
+        "initial_report_submitted": false,
+        "initial_report_submitted_at": null,
+        "complete_report_submitted": false,
+        "complete_report_submitted_at": null,
+        "status": "remediating",
+        "remediation_actions": [
+          "[AI Suggested] Conduct root cause analysis",
+          "[AI Suggested] Implement immediate containment measures",
+          "[AI Suggested] Review and update risk management system (Article 9)",
+          "[AI Suggested] Update technical documentation",
+          "[AI Suggested] Notify affected users if required"
+        ],
+        "remediation_status": "pending",
+        "corrective_actions": [],
+        "authority_notified": false,
+        "authority_notified_at": null,
+        "authority_contact": null,
+        "investigation_notes": [
+          "Causal link established: Root cause analysis confirms AI model error in dosage calculation algorithm. The model incorrectly interpreted pediatric weight-based dosing guidelines."
+        ],
+        "risk_assessment": null,
+        "created_at": "2026-01-17T10:31:47.053018",
+        "updated_at": "2026-01-17T10:31:51.660440",
+        "metadata": {
+          "test": true,
+          "demo": true
+        }
+      },
+      {
+        "id": "INC-20260117-102838-0",
+        "title": "AI System Produced Harmful Medical Advice",
+        "description": "The AI system provided incorrect dosage recommendations that could lead to patient harm. The system suggested 10x the recommended dose for a pediatric medication. This was detected through automated monitoring of prescription patterns.",
+        "detected_at": "2026-01-17T10:28:38.644818",
+        "detected_by": "automated",
+        "ai_system_id": "MED-AI-001",
+        "ai_system_name": "Medical Diagnosis Assistant v2.0",
+        "member_state": "Germany",
+        "severity": "high",
+        "incident_type": "Incorrect dosage recommendation leading to potential patient harm.",
+        "is_serious": true,
+        "serious_incident_type": "a",
+        "causal_link_established": true,
+        "causal_link_established_at": "2026-01-17T10:28:40.660554",
+        "causal_link_evidence": null,
+        "reporting_deadline": "2026-01-27T10:28:40.660554",
+        "reporting_timeline_days": 10,
+        "initial_report_submitted": false,
+        "initial_report_submitted_at": null,
+        "complete_report_submitted": false,
+        "complete_report_submitted_at": null,
+        "status": "investigating",
+        "remediation_actions": [
+          "Conduct root cause analysis of dosage calculation algorithm"
+        ],
+        "remediation_status": "pending",
+        "corrective_actions": [],
+        "authority_notified": false,
+        "authority_notified_at": null,
+        "authority_contact": null,
+        "investigation_notes": [
+          "Causal link established: Root cause analysis confirms AI model error in dosage calculation algorithm. The model incorrectly interpreted pediatric weight-based dosing guidelines."
+        ],
+        "risk_assessment": null,
+        "created_at": "2026-01-17T10:28:38.644841",
+        "updated_at": "2026-01-17T03:53:29.063512",
+        "metadata": {
+          "test": true,
+          "demo": true
+        }
+      }
+    ],
+    "total": 10
+  },
+  "eu_ai_act_alignment": {
+    "article_15_4": "Continuous security monitoring, threat detection, and resilience against attacks",
+    "article_73": "Incident response workflow and serious incident reporting (when applicable)"
+  }
+}

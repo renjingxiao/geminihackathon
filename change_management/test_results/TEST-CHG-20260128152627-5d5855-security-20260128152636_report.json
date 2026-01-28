@@ -1,0 +1,13 @@
+{
+  "test_id": "TEST-CHG-20260128152627-5d5855-security-20260128152636",
+  "test_name": "Security Test Suite",
+  "test_type": "security",
+  "status": "passed",
+  "passed": true,
+  "duration_seconds": 32.7470634023706,
+  "details": "Executed Security Test Suite for change CHG-20260128152627-5d5855. All checks passed.",
+  "timestamp": "2026-01-28T15:26:36.115762",
+  "artifacts": [
+    "change_management/test_results/TEST-CHG-20260128152627-5d5855-security-20260128152636_report.json"
+  ]
+}

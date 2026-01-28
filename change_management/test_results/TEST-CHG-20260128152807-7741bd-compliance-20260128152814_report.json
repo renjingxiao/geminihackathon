@@ -1,0 +1,13 @@
+{
+  "test_id": "TEST-CHG-20260128152807-7741bd-compliance-20260128152814",
+  "test_name": "EU AI Act Compliance Tests",
+  "test_type": "compliance",
+  "status": "passed",
+  "passed": true,
+  "duration_seconds": 25.183728821107277,
+  "details": "Executed EU AI Act Compliance Tests for change CHG-20260128152807-7741bd. All checks passed.",
+  "timestamp": "2026-01-28T15:28:14.998279",
+  "artifacts": [
+    "change_management/test_results/TEST-CHG-20260128152807-7741bd-compliance-20260128152814_report.json"
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "generated_at": "2026-01-28T10:08:36.698080",
+  "scope_root": "/Users/jiangyuqing/geminihackathon",
+  "eu_ai_act_alignment": {
+    "article_15_1": {
+      "keywords": [
+        "system security",
+        "data protection",
+        "attack prevention"
+      ],
+      "controls_covered": [
+        "threat_modeling",
+        "security_code_review",
+        "vulnerability_assessment",
+        "secrets_management"
+      ]
+    },
+    "article_15_4": {
+      "keywords": [
+        "system integrity",
+        "injection attack prevention",
+        "attack prevention"
+      ],
+      "controls_covered": [
+        "input_validation",
+        "rate_limiting",
+        "sanitization"
+      ]
+    }
+  },
+  "tool_results": [
+    {
+      "name": "Bandit (Python SAST)",
+      "status": "skipped",
+      "details": "'bandit' not found in PATH",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "pip-audit (deps)",
+      "status": "skipped",
+      "details": "'pip-audit' not found in PATH",
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "gitleaks (secrets)",
+      "status": "skipped",
+      "details": "'gitleaks' not found in PATH",
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "findings": [
+    {
+      "category": "secrets_management",
+      "severity": "high",
+      "title": "Potential secret detected: Generic API key",
+      "evidence": "batch_fact_checker.py",
+      "recommendation": "Rotate impacted credentials, remove secrets from repo history, and enforce secret scanning in CI."
+    },
+    {
+      "category": "secrets_management",
+      "severity": "high",
+      "title": "Potential secret detected: Generic API key",
+      "evidence": "check_key.py",
+      "recommendation": "Rotate impacted credentials, remove secrets from repo history, and enforce secret scanning in CI."
+    },
+    {
+      "category": "secrets_management",
+      "severity": "high",
+      "title": "Potential secret detected: Generic API key",
+      "evidence": "risk_analysis_accessibility/analyser.py",
+      "recommendation": "Rotate impacted credentials, remove secrets from repo history, and enforce secret scanning in CI."
+    },
+    {
+      "category": "security_code_review",
+      "severity": "low",
+      "title": "Potential insecure YAML load",
+      "evidence": "skills/explaining-code/google-ecosystem/skills/gemini-cli-docs/scripts/management/index_manager.py",
+      "recommendation": "Use yaml.safe_load for untrusted YAML."
+    },
+    {
+      "category": "threat_modeling",
+      "severity": "low",
+      "title": "Threat modeling not generated (missing GEMINI_API_KEY or google-genai)",
+      "evidence": "N/A",
+      "recommendation": "Provide GEMINI_API_KEY and ensure google-genai is installed to generate a draft threat model, then validate with experts."
+    }
+  ],
+  "summary": {
+    "finding_counts": {
+      "critical": 0,
+      "high": 3,
+      "medium": 0,
+      "low": 2
+    },
+    "top_findings": [
+      {
+        "category": "secrets_management",
+        "severity": "high",
+        "title": "Potential secret detected: Generic API key",
+        "evidence": "batch_fact_checker.py",
+        "recommendation": "Rotate impacted credentials, remove secrets from repo history, and enforce secret scanning in CI."
+      },
+      {
+        "category": "secrets_management",
+        "severity": "high",
+        "title": "Potential secret detected: Generic API key",
+        "evidence": "check_key.py",
+        "recommendation": "Rotate impacted credentials, remove secrets from repo history, and enforce secret scanning in CI."
+      },
+      {
+        "category": "secrets_management",
+        "severity": "high",
+        "title": "Potential secret detected: Generic API key",
+        "evidence": "risk_analysis_accessibility/analyser.py",
+        "recommendation": "Rotate impacted credentials, remove secrets from repo history, and enforce secret scanning in CI."
+      },
+      {
+        "category": "security_code_review",
+        "severity": "low",
+        "title": "Potential insecure YAML load",
+        "evidence": "skills/explaining-code/google-ecosystem/skills/gemini-cli-docs/scripts/management/index_manager.py",
+        "recommendation": "Use yaml.safe_load for untrusted YAML."
+      },
+      {
+        "category": "threat_modeling",
+        "severity": "low",
+        "title": "Threat modeling not generated (missing GEMINI_API_KEY or google-genai)",
+        "evidence": "N/A",
+        "recommendation": "Provide GEMINI_API_KEY and ensure google-genai is installed to generate a draft threat model, then validate with experts."
+      }
+    ],
+    "tools_failed": []
+  }
+}

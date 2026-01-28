@@ -1,0 +1,114 @@
+{
+  "change_id": "CHG-20260128152847-7741bd",
+  "title": "Fix Data Pipeline Memory Leak",
+  "description": "Resolve memory leak in data preprocessing pipeline",
+  "change_type": "bug_fix",
+  "priority": "high",
+  "status": "rejected",
+  "requester": "demo-user@company.com",
+  "created_at": "2026-01-28T15:28:47.416380",
+  "updated_at": "2026-01-28T15:28:57.932971",
+  "target_deployment_date": "2026-02-15",
+  "affected_systems": [
+    "data-pipeline",
+    "preprocessing"
+  ],
+  "business_justification": "Prevent system crashes and data loss",
+  "technical_details": "Fix buffer overflow in streaming processor",
+  "impact_assessment": {
+    "risk_level": "low",
+    "affected_components": [
+      "data-pipeline",
+      "preprocessing"
+    ],
+    "affected_users": "Requires manual assessment",
+    "performance_impact": "Requires manual assessment",
+    "compliance_impact": "Requires manual review per Article 17 and 43",
+    "rollback_complexity": "moderate",
+    "testing_requirements": [
+      "Unit tests",
+      "Integration tests",
+      "Regression tests"
+    ],
+    "dependencies": [],
+    "ai_analysis": "Manual assessment - AI analysis unavailable",
+    "confidence_score": 0.5,
+    "timestamp": "2026-01-28T15:28:50.552278"
+  },
+  "test_results": [
+    {
+      "test_id": "TEST-CHG-20260128152847-7741bd-compliance-20260128152855",
+      "test_name": "EU AI Act Compliance Tests",
+      "test_type": "compliance",
+      "status": "passed",
+      "passed": true,
+      "duration_seconds": 25.850189292909654,
+      "details": "Executed EU AI Act Compliance Tests for change CHG-20260128152847-7741bd. All checks passed.",
+      "timestamp": "2026-01-28T15:28:55.181948",
+      "artifacts": [
+        "change_management/test_results/TEST-CHG-20260128152847-7741bd-compliance-20260128152855_report.json"
+      ]
+    },
+    {
+      "test_id": "TEST-CHG-20260128152847-7741bd-audit-20260128152855",
+      "test_name": "Unit Test Suite",
+      "test_type": "audit",
+      "status": "passed",
+      "passed": true,
+      "duration_seconds": 6.782127236661411,
+      "details": "Executed Unit Test Suite for change CHG-20260128152847-7741bd. All checks passed.",
+      "timestamp": "2026-01-28T15:28:55.182737",
+      "artifacts": [
+        "change_management/test_results/TEST-CHG-20260128152847-7741bd-audit-20260128152855_report.json"
+      ]
+    },
+    {
+      "test_id": "TEST-CHG-20260128152847-7741bd-documentation-20260128152855",
+      "test_name": "Unit Test Suite",
+      "test_type": "documentation",
+      "status": "passed",
+      "passed": true,
+      "duration_seconds": 7.933884857581079,
+      "details": "Executed Unit Test Suite for change CHG-20260128152847-7741bd. All checks passed.",
+      "timestamp": "2026-01-28T15:28:55.183363",
+      "artifacts": [
+        "change_management/test_results/TEST-CHG-20260128152847-7741bd-documentation-20260128152855_report.json"
+      ]
+    }
+  ],
+  "approvals": [
+    {
+      "approver": "product-manager@company.com",
+      "requested_at": "2026-01-28T15:28:57.726116",
+      "status": "rejected",
+      "notes": "Business alignment check",
+      "approved_at": "2026-01-28T15:28:57.932951",
+      "decision_notes": "Insufficient testing coverage - requires additional security tests"
+    }
+  ],
+  "rollback_plan": {
+    "change_id": "CHG-20260128152847-7741bd",
+    "created_at": "2026-01-28T15:28:53.515898",
+    "rollback_steps": [
+      "Identify components to rollback",
+      "Create backup of current state",
+      "Restore previous version",
+      "Verify system health",
+      "Run validation tests"
+    ],
+    "backup_locations": [
+      "change_management/backups/backup_CHG-20260128152847-7741bd_20260128_152853.json"
+    ],
+    "verification_steps": [
+      "Check system health endpoints",
+      "Verify critical functionality",
+      "Monitor error rates",
+      "Validate performance metrics",
+      "Confirm compliance status"
+    ],
+    "estimated_duration_minutes": 30,
+    "automated": true
+  },
+  "deployment_log": [],
+  "metadata": {}
+}

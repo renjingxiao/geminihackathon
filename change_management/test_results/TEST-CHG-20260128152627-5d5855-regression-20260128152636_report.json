@@ -1,0 +1,13 @@
+{
+  "test_id": "TEST-CHG-20260128152627-5d5855-regression-20260128152636",
+  "test_name": "Regression Test Suite",
+  "test_type": "regression",
+  "status": "failed",
+  "passed": false,
+  "duration_seconds": 73.59757761802166,
+  "details": "Executed Regression Test Suite for change CHG-20260128152627-5d5855. Some checks failed - review required.",
+  "timestamp": "2026-01-28T15:26:36.111215",
+  "artifacts": [
+    "change_management/test_results/TEST-CHG-20260128152627-5d5855-regression-20260128152636_report.json"
+  ]
+}

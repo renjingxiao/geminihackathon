@@ -1,0 +1,104 @@
+{
+  "change_id": "CHG-20260128152626-7c9f61",
+  "title": "Update AI Risk Classification Model to v2.1",
+  "description": "Deploy improved risk classification model with 5% accuracy increase",
+  "change_type": "model_update",
+  "priority": "high",
+  "status": "approved",
+  "requester": "demo-user@company.com",
+  "created_at": "2026-01-28T15:26:26.546403",
+  "updated_at": "2026-01-28T15:26:37.769522",
+  "target_deployment_date": "2026-02-15",
+  "affected_systems": [
+    "risk-classifier",
+    "api-gateway",
+    "monitoring"
+  ],
+  "business_justification": "Improve accuracy and reduce false positives per Article 17 requirements",
+  "technical_details": "New attention mechanism, trained on 2M samples, optimized inference",
+  "impact_assessment": {
+    "risk_level": "high",
+    "affected_components": [
+      "risk-classifier",
+      "api-gateway",
+      "monitoring"
+    ],
+    "affected_users": "Requires manual assessment",
+    "performance_impact": "Requires manual assessment",
+    "compliance_impact": "Requires manual review per Article 17 and 43",
+    "rollback_complexity": "moderate",
+    "testing_requirements": [
+      "Unit tests",
+      "Integration tests",
+      "Regression tests"
+    ],
+    "dependencies": [],
+    "ai_analysis": "Manual assessment - AI analysis unavailable",
+    "confidence_score": 0.5,
+    "timestamp": "2026-01-28T15:26:29.090347"
+  },
+  "test_results": [
+    {
+      "test_id": "TEST-CHG-20260128152626-7c9f61-unit-20260128152635",
+      "test_name": "Unit Test Suite",
+      "test_type": "unit",
+      "status": "passed",
+      "passed": true,
+      "duration_seconds": 12.384783660779732,
+      "details": "Executed Unit Test Suite for change CHG-20260128152626-7c9f61. All checks passed.",
+      "timestamp": "2026-01-28T15:26:35.669269",
+      "artifacts": [
+        "change_management/test_results/TEST-CHG-20260128152626-7c9f61-unit-20260128152635_report.json"
+      ]
+    },
+    {
+      "test_id": "TEST-CHG-20260128152626-7c9f61-smoke-20260128152635",
+      "test_name": "Smoke Test Suite",
+      "test_type": "smoke",
+      "status": "passed",
+      "passed": true,
+      "duration_seconds": 3.353637634414669,
+      "details": "Executed Smoke Test Suite for change CHG-20260128152626-7c9f61. All checks passed.",
+      "timestamp": "2026-01-28T15:26:35.672910",
+      "artifacts": [
+        "change_management/test_results/TEST-CHG-20260128152626-7c9f61-smoke-20260128152635_report.json"
+      ]
+    }
+  ],
+  "approvals": [
+    {
+      "approver": "compliance-officer@company.com",
+      "requested_at": "2026-01-28T15:26:37.352542",
+      "status": "approved",
+      "notes": "Article 17 compliance review",
+      "approved_at": "2026-01-28T15:26:37.769494",
+      "decision_notes": "Approved - meets EU AI Act requirements. Article 17 compliance review complete."
+    }
+  ],
+  "rollback_plan": {
+    "change_id": "CHG-20260128152626-7c9f61",
+    "created_at": "2026-01-28T15:26:32.864432",
+    "rollback_steps": [
+      "Stop current model serving",
+      "Restore previous model version from backup",
+      "Verify model integrity",
+      "Restart model serving",
+      "Run smoke tests",
+      "Monitor performance metrics"
+    ],
+    "backup_locations": [
+      "change_management/backups/backup_CHG-20260128152626-7c9f61_20260128_152632.json"
+    ],
+    "verification_steps": [
+      "Check system health endpoints",
+      "Verify critical functionality",
+      "Monitor error rates",
+      "Validate performance metrics",
+      "Confirm compliance status"
+    ],
+    "estimated_duration_minutes": 15,
+    "automated": true
+  },
+  "deployment_log": [],
+  "metadata": {}
+}

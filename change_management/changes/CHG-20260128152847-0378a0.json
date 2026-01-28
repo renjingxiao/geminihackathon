@@ -1,0 +1,74 @@
+{
+  "change_id": "CHG-20260128152847-0378a0",
+  "title": "Update Monitoring Configuration",
+  "description": "Add new metrics for Article 17 compliance monitoring",
+  "change_type": "configuration",
+  "priority": "low",
+  "status": "pending_approval",
+  "requester": "demo-user@company.com",
+  "created_at": "2026-01-28T15:28:47.722422",
+  "updated_at": "2026-01-28T15:28:58.234391",
+  "target_deployment_date": "2026-02-15",
+  "affected_systems": [
+    "prometheus",
+    "grafana"
+  ],
+  "business_justification": "Enhanced compliance monitoring capabilities",
+  "technical_details": "Add custom metrics for quality management tracking",
+  "impact_assessment": {
+    "risk_level": "medium",
+    "affected_components": [
+      "prometheus",
+      "grafana"
+    ],
+    "affected_users": "Requires manual assessment",
+    "performance_impact": "Requires manual assessment",
+    "compliance_impact": "Requires manual review per Article 17 and 43",
+    "rollback_complexity": "moderate",
+    "testing_requirements": [
+      "Unit tests",
+      "Integration tests",
+      "Regression tests"
+    ],
+    "dependencies": [],
+    "ai_analysis": "Manual assessment - AI analysis unavailable",
+    "confidence_score": 0.5,
+    "timestamp": "2026-01-28T15:28:51.057375"
+  },
+  "test_results": [],
+  "approvals": [
+    {
+      "approver": "compliance-officer@company.com",
+      "requested_at": "2026-01-28T15:28:58.234369",
+      "status": "pending",
+      "notes": "Article 17 compliance review",
+      "approved_at": null,
+      "decision_notes": null
+    }
+  ],
+  "rollback_plan": {
+    "change_id": "CHG-20260128152847-0378a0",
+    "created_at": "2026-01-28T15:28:53.818011",
+    "rollback_steps": [
+      "Backup current configuration",
+      "Restore previous configuration from version control",
+      "Validate configuration syntax",
+      "Apply configuration",
+      "Verify service health"
+    ],
+    "backup_locations": [
+      "change_management/backups/backup_CHG-20260128152847-0378a0_20260128_152853.json"
+    ],
+    "verification_steps": [
+      "Check system health endpoints",
+      "Verify critical functionality",
+      "Monitor error rates",
+      "Validate performance metrics",
+      "Confirm compliance status"
+    ],
+    "estimated_duration_minutes": 5,
+    "automated": true
+  },
+  "deployment_log": [],
+  "metadata": {}
+}
