@@ -52,3 +52,7 @@ store_info.txt
 *.tmp
 temp/
 *~$*.xlsx
+
+# Bias testing results
+bias_test_results/BT-*.json
+bias_test_results/demo_report.md
