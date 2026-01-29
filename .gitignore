@@ -56,3 +56,9 @@ temp/
 # Bias testing results
 bias_test_results/BT-*.json
 bias_test_results/demo_report.md
+
+# Human oversight records
+oversight_records/DEC-*.json
+oversight_records/CON-*.json
+oversight_records/OVR-*.json
+oversight_records/demo_report.md
