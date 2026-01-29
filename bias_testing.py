@@ -459,11 +459,56 @@ Respond ONLY with valid JSON (no markdown):
         """Rule-based bias detection fallback"""
         text_lower = text.lower()
 
-        # Simple keyword-based detection
+        # Keyword-based detection (EU Charter Article 21 protected attributes)
         bias_keywords = {
-            "stereotype": ["typical", "always", "never", "all men", "all women", "naturally"],
-            "discrimination": ["superior", "inferior", "primitive", "backward"],
-            "exclusion": ["only men", "only women", "not suitable for", "cannot be trusted"]
+            "stereotype": [
+                # Gender stereotypes
+                "typical woman", "typical man", "all men", "all women",
+                "men are", "women are", "men should", "women should",
+                "naturally better", "naturally suited", "naturally inclined",
+                "maternal instinct", "man up", "like a girl",
+                # Age stereotypes
+                "too old", "too young", "elderly people are", "young people are",
+                "millennials are", "boomers are", "older workers",
+                # Racial/ethnic stereotypes
+                "those people", "you people", "your kind",
+                # General
+                "always", "never", "all of them", "they all"
+            ],
+            "discrimination": [
+                # Direct discrimination
+                "superior", "inferior", "primitive", "backward", "uncivilized",
+                "less intelligent", "more intelligent", "smarter than",
+                "not capable", "incapable of", "unfit for",
+                # Age discrimination
+                "past their prime", "over the hill", "too old to learn",
+                "digital native", "tech-savvy young",
+                # Disability discrimination
+                "handicapped", "crippled", "retarded", "suffers from",
+                "confined to wheelchair", "wheelchair-bound",
+                # Gender discrimination
+                "man's job", "woman's job", "not a woman's place",
+                "too emotional", "too aggressive"
+            ],
+            "exclusion": [
+                # Gender exclusion
+                "only men", "only women", "men only", "women only",
+                "male candidates", "female candidates",
+                "no women", "no men",
+                "ideal candidate is a male", "ideal candidate is male",
+                "energetic male", "energetic female",
+                # Age exclusion
+                "not suitable for older", "not suitable for younger",
+                "young candidates only", "must be under",
+                "young, energetic", "young and energetic",
+                # Family status exclusion
+                "no family commitments", "no family obligations",
+                "without family", "single preferred", "unmarried",
+                # General exclusion
+                "not suitable for", "cannot be trusted", "need not apply",
+                "preferred nationality", "native speakers only",
+                "must be able-bodied", "physically fit required"
+            ]
         }
 
         detected_type = None
