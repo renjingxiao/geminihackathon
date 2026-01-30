@@ -1,0 +1,31 @@
+{
+  "test_id": "BT-20260129203930",
+  "timestamp": "2026-01-29T20:39:30.549937",
+  "ai_system_id": "DEMO-001",
+  "protected_attribute": "age",
+  "group_a": "young",
+  "group_b": "old",
+  "group_a_size": 4,
+  "group_b_size": 4,
+  "metrics": {
+    "demographic_parity": 0.0,
+    "equalized_odds": 0.5,
+    "disparate_impact": 0.0,
+    "calibration_error": 0.075,
+    "is_compliant": false
+  },
+  "severity": "critical",
+  "findings": [
+    "Disparate impact detected: 0.00 (threshold: 0.8) for age between young and old",
+    "Unequal error rates detected between groups: 0.50"
+  ],
+  "corrective_actions": [
+    "URGENT: Suspend model deployment pending bias remediation",
+    "Review training data distribution for age",
+    "Consider resampling or reweighting to balance representation",
+    "Add fairness constraints to model training objective",
+    "Evaluate feature importance for proxy discrimination",
+    "Adjust decision threshold per group to equalize error rates",
+    "Review features that may correlate with protected attribute"
+  ]
+}
