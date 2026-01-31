@@ -164,6 +164,9 @@ class HumanOversightSystem:
             RiskLevel.CRITICAL: {"consent": ConsentType.WITNESSED, "timeout_hours": 0}
         }
 
+        # Load existing data from files
+        self._load_from_storage()
+
     # ========================================================
     # 1. Consent Mechanism
     # ========================================================
@@ -676,6 +679,48 @@ Provide a brief, clear explanation (2-3 sentences) that helps the user understan
         filepath = self.storage_dir / f"{decision.decision_id}.json"
         with open(filepath, 'w') as f:
             json.dump(decision.to_dict(), f, indent=2)
+
+    def _load_from_storage(self):
+        """Load decisions from JSON files"""
+        for filepath in self.storage_dir.glob("DEC-*.json"):
+            try:
+                with open(filepath, 'r') as f:
+                    data = json.load(f)
+                decision = self._dict_to_decision(data)
+                if decision.status == DecisionStatus.PENDING:
+                    self.pending_decisions.append(decision)
+                else:
+                    self.decision_history.append(decision)
+            except Exception:
+                continue  # Skip corrupted files
+
+        for filepath in self.storage_dir.glob("OVR-*.json"):
+            try:
+                with open(filepath, 'r') as f:
+                    data = json.load(f)
+                decision = self._dict_to_decision(data)
+                self.decision_history.append(decision)
+            except Exception:
+                continue
+
+    def _dict_to_decision(self, data: Dict) -> AIDecision:
+        """Convert dict from JSON to AIDecision object"""
+        return AIDecision(
+            decision_id=data["decision_id"],
+            ai_system_id=data["ai_system_id"],
+            action=data["action"],
+            description=data["description"],
+            risk_level=RiskLevel(data["risk_level"]),
+            status=DecisionStatus(data["status"]),
+            created_at=datetime.fromisoformat(data["created_at"]),
+            confidence=data["confidence"],
+            explanation=data["explanation"],
+            affected_users=data["affected_users"],
+            reversible=data["reversible"],
+            human_reviewer=data.get("human_reviewer"),
+            review_timestamp=datetime.fromisoformat(data["review_timestamp"]) if data.get("review_timestamp") else None,
+            override_reason=data.get("override_reason")
+        )
 
 
 # ============================================================
